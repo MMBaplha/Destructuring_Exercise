@@ -29,7 +29,7 @@ getUserData({firstName: "Alejandro", favoriteColor: "purple"}) // `Your name is 
 getUserData({firstName: "Melissa"}) // `Your name is Melissa and you like green`
 getUserData({}) // `Your name is undefined and you like green`
 
-//Array Destructuring 1
+// Array Destructuring 1
 
 let [first, second, third] = ["Maya", "Marisa", "Chi"];
 
@@ -37,7 +37,7 @@ console.log(first); // "Maya"
 console.log(second); // "Marisa"
 console.log(third); // "Chi"
 
-//Array Destructuring 2
+// Array Destructuring 2
 
 let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
   "Raindrops on roses",
@@ -54,16 +54,18 @@ console.log(aFewOfMyFavoriteThings);
 // "warm woolen mittens",
 // "Brown paper packages tied up with strings"
 
-//Array Destructuring 3
+// Array Destructuring 3
 
 let numbers = [10, 20, 30];
 [numbers[1], numbers[2]] = [numbers[2], numbers[1]]
 
 console.log(numbers) // [10, 30, 20]
 
+//******************* 
 //ES2015 Refactoring
+//******************
 
-ES5 Assigning Variables to Object Properties
+// ES5 Assigning Variables to Object Properties
 var obj = {
   numbers: {
     a: 1,
@@ -73,3 +75,33 @@ var obj = {
 
 var a = obj.numbers.a;
 var b = obj.numbers.b;
+
+// ES2015 Object Destructuring
+
+let obj = {
+    numbers: {
+        a: 1,
+        b: 2
+    }
+};
+
+let {a, b} = obj.numbers
+
+// ES5 Array Swap
+
+var arr = [1, 2];
+var temp = arr[0];
+arr[0] = arr[1];
+arr[1] = temp;
+
+// ES2015 One-Line Array Swap with Destructuring
+
+let arr = [1, 2];
+let temp = arr[0];
+
+[arr, temp] = [temp, arr];
+
+// raceResults()
+
+const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest});
+raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre']);
