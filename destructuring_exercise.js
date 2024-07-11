@@ -16,8 +16,7 @@ let planetFacts = {
 let {numPlanets, ...discoveryYears} = planetFacts;
 
 console.log(discoveryYears); 
-// yearNeptuneDiscovered: 1846,
-// yearMarsDiscovered: 1659
+// {yearNeptuneDiscovered: 1846, yearMarsDiscovered: 1659}
 
 // Object Destructuring 3
 
@@ -50,9 +49,7 @@ let [raindrops, whiskers, ...aFewOfMyFavoriteThings] = [
 console.log(raindrops); // "Raindrops on roses"
 console.log(whiskers); // "whiskers on kittens"
 console.log(aFewOfMyFavoriteThings); 
-// "Bright copper kettles",
-// "warm woolen mittens",
-// "Brown paper packages tied up with strings"
+// ["Bright copper kettles", "warm woolen mittens", "Brown paper packages tied up with strings"]
 
 // Array Destructuring 3
 
@@ -99,7 +96,8 @@ arr[1] = temp;
 let arr = [1, 2];
 let temp = arr[0];
 
-[arr, temp] = [temp, arr];
+
+[arr[0], arr[1]] = [arr[1], arr[0]]
 
 // raceResults()
 
